@@ -1,47 +1,48 @@
-{%extends "base.html"%}
-{% block title%}Home{%endblock%}
-{% block content%}
+{%extends "base.html"%} {% block title%}Home{%endblock%} {% block content%}
 
 <div class="header">
   <div class="container">
     <div class="row">
       <div class="col-2">
         <h1>
-          Give Your Workout <br />
-          A New Style!
+          Fashion Finesse <br />
+          Unleash Your Personal Style 
         </h1>
         <p>
-          Success isn't always about greatness. It;s about consistency.
-          Consistent
-          <br />
-          hard work gains success. Greatness will come.
+          Unlock Your Style Potential: Explore a Diverse Collection of Exquisite 
+          Fashion and Accessories for Every Occasion
         </p>
         <a href="/all_products" class="btn">Explore Now &#8594;</a>
       </div>
-      <div class="col-2">
-        <img src="images/image1.png" />
+      <div class="col-2 image-wraper">
+        <img src="static/images/hero-image.png" />
       </div>
     </div>
   </div>
 </div>
-<!-- Feadtued Categories -->
+<!-- Brands -->
 
-<div class="categories">
+<div class="brands">
   <div class="small-container">
     <div class="row">
-      <div class="col-3">
-        <img src="images/category-1.jpg" />
+      <div class="col-5">
+        <img src="static/images/brand1.png" />
       </div>
-      <div class="col-3">
-        <img src="images/category-2.jpg" />
+      <div class="col-5">
+        <img src="static/images/brand2.png" />
       </div>
-      <div class="col-3">
-        <img src="images/category-3.jpg" />
+      <div class="col-5">
+        <img src="static/images/brand3.png" />
+      </div>
+      <div class="col-5">
+        <img src="static/images/brand4.png" />
+      </div>
+      <div class="col-5">
+        <img src="static/images/brand5.png" />
       </div>
     </div>
   </div>
 </div>
-
 <!-- Featured Products -->
 
 <div class="small-container">
@@ -229,8 +230,9 @@
       <div class="col-3">
         <i class="fa fa-quote-left"></i>
         <p>
-          Lorem ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been industry's standard dummy text.
+          is your one-stop shop for designer pieces at an affordable price. With
+          an ever-changing selection of clothes for men, women, and children,
+          you’ll find something for any occasion.
         </p>
         <div class="rating">
           <i class="fa fa-star"></i>
@@ -240,13 +242,14 @@
           <i class="fa fa-star"></i>
         </div>
         <img src="static/images/logo.jpg" />
-        <h3>Sean Parker</h3>
+        <h3>LIZ S.</h3>
       </div>
       <div class="col-3">
         <i class="fa fa-quote-left"></i>
         <p>
-          Lorem ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been industry's standard dummy text.
+          it is a budget-friendly clothing store that has colorful and trendy
+          pieces for men and women. Their selection of graphic tees, sweatpants
+          and joggers, and sneakers
         </p>
         <div class="rating">
           <i class="fa fa-star"></i>
@@ -256,13 +259,14 @@
           <i class="fa fa-star"></i>
         </div>
         <img src="static/images/logo.jpg" />
-        <h3>Mike Smith</h3>
+        <h3>MIKE A.</h3>
       </div>
       <div class="col-3">
         <i class="fa fa-quote-left"></i>
         <p>
-          Lorem ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been industry's standard dummy text.
+          is a luxurious department store that carries designer clothes and
+          accessories. They have an extensive collection of high-end fashion
+          from top names like Prada, Gucci, and Chanel.
         </p>
         <div class="rating">
           <i class="fa fa-star"></i>
@@ -272,34 +276,45 @@
           <i class="fa fa-star"></i>
         </div>
         <img src="static/images/logo.jpg" />
-        <h3>Mabel Joe</h3>
+        <h3>KAREN P.</h3>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Brands -->
+<!-- Feadtued Categories -->
 
-<div class="brands">
+<div class="guarantee">
   <div class="small-container">
     <div class="row">
-      <div class="col-5">
-        <img src="static/images/logo.jpg" />
+      <div class="col-3">
+        <div class="grey-circle">
+          <img src="static/images/icon-delivery.png" />
+        </div>
+        <div style="display: flex; align-items: center; flex-direction: column">
+          <h3 className=" text-xl font-bold mb-2">FREE AND FAST DELIVERY</h3>
+          <p>Free delivery for all orders over $140</p>
+        </div>
       </div>
-      <div class="col-5">
-        <img src="static/images/logo.jpg" />
+      <div class="col-3">
+        <div class="grey-circle">
+          <img src="static/images/Icon-Customer.png" />
+        </div>
+        <div style="display: flex; align-items: center; flex-direction: column">
+          <h3 className=" text-xl font-bold mb-2">24/7 CUSTOMER SERVICE</h3>
+          <p>Friendly 24/7 customer support</p>
+        </div>
       </div>
-      <div class="col-5">
-        <img src="static/images/logo.jpg" />
-      </div>
-      <div class="col-5">
-        <img src="static/images/logo.jpg" />
-      </div>
-      <div class="col-5">
-        <img src="static/images/logo.jpg" />
+      <div class="col-3">
+        <div class="grey-circle">
+          <img src="static/images/icon-secure.png" />
+        </div>
+        <div style="display: flex; align-items: center; flex-direction: column">
+          <h3 className=" text-xl font-bold mb-2">MONEY BACK GUARANTEE</h3>
+          <p>We return money within 30 days</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
 {% endblock %}

@@ -1,0 +1,49 @@
+{%extends "base.html"%} {% block title%}Home{%endblock%} {% block content%}
+<div class="account-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <img
+          src="https://images.pexels.com/photos/853151/pexels-photo-853151.jpeg?auto=compress&cs=tinysrgb&w=600"
+          width="100%"
+        />
+      </div>
+      <div class="col-2">
+        <div class="form-container" style="height: 400px;">
+          <div class="form-btn">
+            <a
+              href="/login"
+              style="border-bottom: 3px solid #00aedf; padding-bottom: 3px"
+              >Login</a
+            >
+            <a href="/signup">Register</a>
+          </div>
+          <form method="POST">
+            <h2 style="margin-bottom: 2rem">Login</h2>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Enter Email"
+              />
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter Password"
+              />
+              <br />
+              <div>
+                <button class="btn" type="submit">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
