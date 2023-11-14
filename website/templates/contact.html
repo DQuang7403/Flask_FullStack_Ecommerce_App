@@ -1,7 +1,29 @@
-{%extends "base.html"%}
-{% block title%}Home{%endblock%}
-{% block content%}
+{%extends "base.html"%} {% block title%}Verve & Co. | Contact{%endblock%} {%
+block content%}
 
-  This is contact page
+<section class="container">
+  <div class="row">
+    <div class="col-2">
+      <img
+        class="about-img"
+        src="https://images.pexels.com/photos/1306246/pexels-photo-1306246.jpeg?auto=compress&cs=tinysrgb&w=600"
+        alt=""
+      />
+    </div>
+    <div class="col-2">
+      <h2>Contact with us</h2>
+      <form action="">
+        <label for="Name">Name</label>
+        <input type="text" name="Name" id="" />
+        <label for="Tel">Phone</label>
+        <input type="tel" name="Tel" id="" />
+        <label for="Email">Email</label>
+        <input type="email" name="Email" id="" />
+        <label for="message">Your Message</label><br>
+        <textarea name="message" id="" cols="30" rows="10"></textarea>
+      </form>
+    </div>
+  </div>
+</section>
 
 {% endblock %}
