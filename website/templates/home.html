@@ -49,157 +49,41 @@ content%}
 <div class="small-container">
   <h2 class="title">Featured Products</h2>
   <div class="row">
+    {% for product in featuresProduct%}
     <div class="col-4">
-      <a href="product_details.html"
-        ><img src="static/images/product-1.jpg"
-      /></a>
-      <h4>Red Printed T-Shirt</h4>
+      <a href="/product_detail/{{product[0]}}"><img src="{{ product[5]}}" /></a>
+      <h4>{{product[1]}}</h4>
+      {%set rate = product[3]|int%}
       <div class="rating">
+        {%for i in range(0, rate) %}
         <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
+        {%endfor%} {%for i in range(rate, 5) %}
         <i class="fa fa-star-o"></i>
+        {%endfor%}
+        <p>{{product[6]}}</p>
       </div>
-      <p>$50.00</p>
     </div>
-    <div class="col-4">
-      <img src="static/images/product-2.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/product-3.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/product-4.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
+    {%endfor%}
   </div>
   <h2 class="title">Latest Products</h2>
   <div class="row">
+    {% for product in latestProducts%}
     <div class="col-4">
-      <img src="static/images/shop-logo.png" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
+      <a href="/product_detail/{{product[0]}}"><img src="{{ product[5]}}" /></a>
+      <div class="detail">
+        <h4>{{product[1]}}</h4>
+        {%set rate = product[3]|int%}
+        <div class="rating">
+          {%for i in range(0, rate) %}
+          <i class="fa fa-star"></i>
+          {%endfor%} {%for i in range(rate, 5) %}
+          <i class="fa fa-star-o"></i>
+          {%endfor%}
+          <p>{{product[6]}}</p>
+        </div>
       </div>
-      <p>$50.00</p>
     </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
-    <div class="col-4">
-      <img src="static/images/logo.jpg" />
-      <h4>Red Printed T-Shirt</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <p>$50.00</p>
-    </div>
+    {%endfor%}
   </div>
 </div>
 
@@ -244,8 +128,10 @@ content%}
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-        <img src="static/images/logo.jpg" />
-        <h3>LIZ S.</h3>
+        <img
+          src="https://images.unsplash.com/photo-1628157588553-5eeea00af15c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D"
+        />
+        <h3>LEIO Mc.</h3>
       </div>
       <div class="col-3">
         <i class="fa fa-quote-left"></i>
@@ -261,7 +147,9 @@ content%}
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-        <img src="static/images/logo.jpg" />
+        <img
+          src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YXZhdGFyfGVufDB8fDB8fHww"
+        />
         <h3>MIKE A.</h3>
       </div>
       <div class="col-3">
@@ -278,7 +166,9 @@ content%}
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
         </div>
-        <img src="static/images/logo.jpg" />
+        <img
+          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww"
+        />
         <h3>KAREN P.</h3>
       </div>
     </div>

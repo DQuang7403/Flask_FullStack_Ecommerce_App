@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title%}{%endblock%}</title>
-    <link rel="stylesheet" href="static/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -21,7 +24,7 @@
         <div class="logo">
           <a href="/"
             ><img
-              src="static/images/shop-logo.png"
+              src="{{url_for('static', filename='images/shop-logo.png')}}"
               alt="logo"
               width="200px"
               style="border-radius: 8px"
@@ -37,13 +40,13 @@
           </ul>
           <a href="/cart"
             ><img
-              src="static/images/shopping-cart.png"
+              src="{{url_for('static', filename='images/shopping-cart.png')}}"
               width="30px"
               height="30px"
           /></a>
         </nav>
         <img
-          src="static/images/menu.png"
+          src="{{ url_for('static', filename='/images/menu.png') }}"
           class="menu-icon"
           onclick="menutoggle()"
         />
@@ -59,13 +62,17 @@
             <h3>Download Our App</h3>
             <p>Download App for Android and ios mobile phone.</p>
             <div class="app-logo">
-              <img src="static/images/google-play-badge.png" />
-              <img src="static/images/app-store-badge.png" />
+              <img
+                src=" {{url_for('static', filename='images/google-play-badge.png')}}"
+              />
+              <img
+                src=" {{url_for('static', filename='/images/app-store-badge.png')}}"
+              />
             </div>
           </div>
           <div class="footer-col-2">
             <img
-              src="static/images/shop-logo.png"
+              src="{{url_for('static', filename='images/shop-logo.png')}}"
               alt="logo"
               width="200px"
               style="border-radius: 8px"
