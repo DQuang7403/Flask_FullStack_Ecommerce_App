@@ -418,6 +418,9 @@ table {
 .cart-page table button:hover{
   background: #0079A8;
 }
+.cart-page table {
+  margin-bottom: 1.5rem;
+}
 th {
   text-align: left;
   padding: 5px;

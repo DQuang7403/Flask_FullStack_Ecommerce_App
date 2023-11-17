@@ -3,12 +3,12 @@ content%}
 <form action="/update_cart" method="post">
   <div class="small-container cart-page">
     <table>
-      <tr>
+      <tr class="table-header">
         <th>Product</th>
         <th>Quantity</th>
         <th>Subtotal</th>
       </tr>
-      {%set total = namespace(value=1)%} {% for row in cart %}
+      {%set total = namespace(value=0)%} {% for row in cart %}
       <tr>
         <td>
           <div class="cart-info">

@@ -40,7 +40,7 @@ def home():
 @views.route('/cart', methods=['GET'])
 def shopping_cart():
     # current_username = ""
-    # current_cart = []
+    current_cart = []
     # if 'current_user' in session:
     #     current_username = session['current_user']['name']
     # else:
