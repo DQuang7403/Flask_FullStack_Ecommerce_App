@@ -113,3 +113,17 @@ def addToCart():
     # messages = ("Product added successfully! <br> Current:" +
     #             str(rows) + " products" + "<br/><a class='btn btn-primary' href='/cart'>view cart</a><br/> <a class='btn btn-primary' href='/'>home</a>")
     return redirect(url_for('views.product_detail', id=productId))
+@views.route('/cart/update',methods = ['POST'])
+def CartUpdate():
+    cart = session.get('cart', [])
+    new_cart = []
+    for product in cart:
+        product_id = int(product['id'])
+        if f'quantity-{product_id}' in request.form:
+            quantity = int(request.form[f'quantity-product_id'])
+            if quantity == 0 or f'delete-{product_id}' in request.form:
+                continue
+            product['quantity'] = quantity
+        new_cart.append(product)
+    session['cart'] = new_cart
+    return redirect(url_for('views.product_detail', id=product_id))
