@@ -1,7 +1,40 @@
-{%extends "base.html"%}
-{% block title%}Our products{%endblock%}
-{%block content%}
+{%extends "base.html"%} {% block title%}Our products{%endblock%} {%block
+content%}
 <div class="small-container">
+  <form class="input-group" method="POST" action="/search">
+    <input
+      class="form-control"
+      name="searchInput"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
+    <button class="input-group-text" type="submit">Search</button>
+  </form>  
+  {% with messages = get_flashed_messages(category_filter=["success"])%}
+    {%if messages%} 
+      {%for message in messages%}
+        <div class="alert" style="background-color: #CFE2FF">
+          <span class="closebtn" onclick="this.parentElement.style.display='none';"
+            >&times;</span
+          >
+          <p style="color: #084298">You have search for <strong>{{message}}</strong></p> 
+        </div>
+      {%endfor%} 
+    {%endif %} 
+  {%endwith%}
+  {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+      {%for msg in errors %}
+      <div class="alert" style="background-color: #F8D7DA">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';"
+          >&times;</span
+        >
+        <p style="color: #A12029">Error: <strong>{{msg}}</strong></p>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}   
   <div class="row row-2">
     <h2>All Products</h2>
     <select>
@@ -30,7 +63,6 @@
       </div>
     </div>
     {%endfor%}
-    
   </div>
   <!-- <div class="page-btn">
     <span>1</span>

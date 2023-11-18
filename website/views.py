@@ -110,9 +110,8 @@ def addToCart():
     session["cart"] = cart
     rows = len(cart)
     flash('Item added successfully!', 'success')
-    # messages = ("Product added successfully! <br> Current:" +
-    #             str(rows) + " products" + "<br/><a class='btn btn-primary' href='/cart'>view cart</a><br/> <a class='btn btn-primary' href='/'>home</a>")
     return redirect(url_for('views.product_detail', id=productId))
+
 @views.route('/cart/update',methods = ['POST'])
 def CartUpdate():
     cart = session.get('cart', [])
@@ -134,3 +133,22 @@ def CartUpdate():
 #user_email = session['current_user']['email]
 #else:
 #user_id = 0
+
+@views.route('/search', methods=['POST'])
+def search():
+    search_text = request.form['searchInput']
+    # username = None
+    # if 'current_user' in session:
+    #     username = session['current_user']
+    if search_text == "":
+        flash("You must add some text", "error")
+    if search_text != None:
+        flash(search_text, 'success')
+        conn = sqlite3.connect(sqldbname)
+        cursor = conn.cursor()
+        sqlcommand = (
+            "select * from FASHION where product like '%") + search_text + "%'"
+        cursor.execute(sqlcommand)
+        data = cursor.fetchall()
+        conn.close()
+    return render_template('all_products.html', search_text=search_text, all_products=data)
