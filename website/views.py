@@ -40,7 +40,7 @@ def home():
 @views.route('/cart', methods=['GET'])
 def shopping_cart():
     # current_username = ""
-    # current_cart = []
+    current_cart = []
     # if 'current_user' in session:
     #     current_username = session['current_user']['name']
     # else:
@@ -49,7 +49,7 @@ def shopping_cart():
         current_cart = session.get('cart', [])
 
     return render_template('cart.html', cart=current_cart)
-
+    #user_name = current_username
 
 @views.route('/all_products')
 def all_products():
@@ -117,13 +117,20 @@ def addToCart():
 def CartUpdate():
     cart = session.get('cart', [])
     new_cart = []
-    for product in cart:
-        product_id = int(product['id'])
-        if f'quantity-{product_id}' in request.form:
-            quantity = int(request.form[f'quantity-product_id'])
-            if quantity == 0 or f'delete-{product_id}' in request.form:
+    for row in cart:
+        productId = int(row['id'])
+        if f'quantity-{productId}' in request.form:
+            quantity = int(request.form[f'quantity-{productId}'])
+            if quantity == 0 or f'delete-{productId}' in request.form:
                 continue
-            product['quantity'] = quantity
-        new_cart.append(product)
+            row['quantity'] = quantity
+        new_cart.append(row)
     session['cart'] = new_cart
-    return redirect(url_for('views.product_detail', id=product_id))
+    return redirect(url_for('views.shopping_cart'))
+#@views.route('proceed_cart',methods = ['POST'] )
+#def proceed_cart():
+#if 'current_user' in session:
+#user_id = session['current_user']['id']
+#user_email = session['current_user']['email]
+#else:
+#user_id = 0

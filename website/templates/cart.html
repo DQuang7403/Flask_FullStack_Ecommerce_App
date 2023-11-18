@@ -1,5 +1,5 @@
 {%extends "base.html"%}{% block title%}Verve & Co. | Cart{%endblock%} {% block content%}
-<form action="/cart/update" method="post">
+<form action="{{url_for('views.CartUpdate')}}" method="post">
   <div class="small-container cart-page">
     <table>
       <tr>
@@ -16,17 +16,19 @@
               <p>{{row['name']}}</p>
               <small>Price: {{row['price']}}</small>
               <br />
-              <a href="">Remove</a>
+              <button type="submit" name="delete-{{row['id']}}">Remove</button>
             </div>
           </div>
         </td>
         <td>
           <input
             type="number"
+            min="0"
             value="{{row['quantity']}}"
             style="margin-right: 5px; width: 50px"
+            name="quantity-{{row['id']}}"
           />
-          <button type="submit">Update</button>
+          <button type="submit" value="quantity-{{row['id']}}">Update</button>
         </td>
         <td>
           {{convert_int_to_currency(convert_currency_to_int(row['price']) *
