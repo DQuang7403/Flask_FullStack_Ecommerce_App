@@ -152,3 +152,24 @@ def search():
         data = cursor.fetchall()
         conn.close()
     return render_template('all_products.html', search_text=search_text, all_products=data)
+
+@views.route("/sort-form", methods=["POST"])
+def process_sort_form():
+    selected_option = request.form.get('sort-dropdown')
+    conn = sqlite3.connect(sqldbname)
+    cursor = conn.cursor()
+    match selected_option:
+        case "Default Sort":
+            sqlcommand = ("select * from FASHION")
+        case "Sort By Price":
+            sqlcommand = ("select * from FASHION ORDER BY CAST(REPLACE(price, '.', '') AS INT)")
+        case "Sort By Price DESC":
+            sqlcommand = ("select * from FASHION ORDER BY CAST(REPLACE(price, '.', '') AS INT) DESC")
+        case "Sort By Rating":
+            sqlcommand = ("select * from FASHION ORDER BY rating DESC")
+        case "Sort By Brand":        
+            sqlcommand = ("select * from FASHION ORDER BY brand")
+    cursor.execute(sqlcommand)
+    data = cursor.fetchall()
+    conn.close()
+    return render_template('all_products.html', all_products=data)

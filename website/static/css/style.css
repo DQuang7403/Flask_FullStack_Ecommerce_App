@@ -460,6 +460,11 @@ td:last-child {
 th:last-child {
   text-align: right;
 }
+.dropdown-section{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
 /* Account page */
 .account-page {
