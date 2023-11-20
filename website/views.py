@@ -32,7 +32,7 @@ def home():
     sqlcommand = 'SELECT * FROM FASHION LIMIT 0, 4'
     cursor.execute(sqlcommand)
     featuresProduct = cursor.fetchall()
-    sqlcommand = 'SELECT * FROM FASHION LIMIT 2, 10'
+    sqlcommand = 'SELECT * FROM FASHION LIMIT 2, 8'
     cursor.execute(sqlcommand)
     latestProducts = cursor.fetchall()
     return render_template('home.html', featuresProduct=featuresProduct, latestProducts=latestProducts)
