@@ -1,13 +1,20 @@
 {%extends "base.html"%}{% block title%}Verve & Co. | Cart{%endblock%} {% block content%}
+<h3>
+  {% if user_name %}
+      Hello, {{ user_name }}
+  {% else %}
+      Welcome, <a href="/login">Login</a>
+  {% endif %}
+</h3>
 <form action="{{url_for('views.CartUpdate')}}" method="post">
   <div class="small-container cart-page">
     <table>
-      <tr class="table-header">
+      <tr>
         <th>Product</th>
         <th>Quantity</th>
         <th>Subtotal</th>
       </tr>
-      {%set total = namespace(value=0)%} {% for row in cart %}
+      {%set total = namespace(value=1)%} {% for row in cart %}
       <tr>
         <td>
           <div class="cart-info">
@@ -54,13 +61,15 @@
         </tr>
       </table>
     </div>
-    <button
+  </div>
+</form>
+<form action="{{ url_for('views.proceed_cart') }}" method="post">
+  <button
       type="submit"
       style="width: 200px; height: 40px; float: right; cursor: pointer"
       class="btn"
     >
-      Check Out
+      Proceed Cart
     </button>
-  </div>
 </form>
 {%endblock%}

@@ -418,9 +418,6 @@ table {
 .cart-page table button:hover{
   background: #0079A8;
 }
-.cart-page table {
-  margin-bottom: 1.5rem;
-}
 th {
   text-align: left;
   padding: 5px;
@@ -438,8 +435,7 @@ td input {
 }
 td a {
   color: #00aedf;
-  font-size: 1rem;
-  text-decoration: underline;
+  font-size: 12px;
 }
 td img {
   width: 80px;
@@ -460,11 +456,6 @@ td:last-child {
 }
 th:last-child {
   text-align: right;
-}
-.dropdown-section{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 /* Account page */
@@ -546,37 +537,7 @@ form a {
   cursor: pointer;
   transition: 0.3s;
 }
-.input-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 0;
-}
 
-.input-group .form-control {
-  flex-grow: 1;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  color: #495057;
-  background-color: #fff;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-}
-
-.input-group .input-group-text {
-  display: flex;
-  align-items: center;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #495057;
-  text-align: center;
-  background-color: #e9ecef;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
 .closebtn:hover {
   color: black;
 }

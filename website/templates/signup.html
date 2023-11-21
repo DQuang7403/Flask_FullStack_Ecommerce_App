@@ -14,17 +14,9 @@
             <a href="/login" >Login</a>
             <a href="/signup" style="border-bottom: 3px solid #00aedf; padding-bottom: 3px;">Register</a>
           </div>
-          <form method="POST">
+          <form method="POST" action="{{ url_for('views.register') }}">
             <h2 style="margin-bottom: 2rem;">Sign Up</h2>
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="text"
-                id="email"
-                name="email"
-                class="form-control"
-                placeholder="Enter Email"
-              />
               <label for="username">Username</label>
               <input
                 type="text"
@@ -32,29 +24,36 @@
                 name="username"
                 class="form-control"
                 placeholder="Enter Username"
+                required
               />
-              <label for="password1">Password</label>
+              <span class="validation">{{ username_error }}</span>
+              <label for="email">Email Address</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Enter Email"
+                required
+              />
+              <span class="validation">{{ email_error }}</span>
+              <label for="password">Password</label>
               <input
                 type="password"
-                id="password1"
-                name="password1"
+                id="password"
+                name="password"
                 class="form-control"
                 placeholder="Enter Password"
+                required
               />
-              <label for="password2">Password Again</label>
-              <input
-                type="password"
-                id="password2"
-                name="password2"
-                class="form-control"
-                placeholder="Enter Password Again"
-              />
+              <span class="validation">{{ password_error }}</span>
               <br />
               <div>
                 <button class="btn btn-primary" type="submit">Sign Up</button>
               </div>
             </div>
           </form>
+          <p class="message">{{ registeration_success }}</p>
         </div>
       </div>
     </div>
