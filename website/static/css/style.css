@@ -438,7 +438,8 @@ td input {
 }
 td a {
   color: #00aedf;
-  font-size: 12px;
+  font-size: 1rem;
+  text-decoration: underline;
 }
 td img {
   width: 80px;
