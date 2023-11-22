@@ -107,6 +107,11 @@ def contact():
         Tel = request.form['Tel']
         Email = request.form['Email']
         Message = request.form['message']
+        conn = sqlite3.connect(sqldbname)
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO Contact (Name, Tel, Email, Messages) VALUES(?,?,?,?)", (Name, Tel, Email, Message))
+        conn.commit()
+        conn.close()
         flash("Thank you for your feedback", "success")
         return redirect(url_for('views.contact'))
     return render_template('contact.html',user_name = current_username)
@@ -138,7 +143,6 @@ def addToCart():
     if not found:
         cart.append(product_detail)
     session["cart"] = cart
-    rows = len(cart)
     flash('Item added successfully!', 'success')
     return redirect(url_for('views.product_detail', id=productId))
 
