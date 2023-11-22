@@ -1,4 +1,22 @@
-{%extends "base.html"%} {% block title%}Verve & Co. | Log in{%endblock%} {% block content%}
+{%extends "base.html"%} {% block title%}Verve & Co. | Log in{%endblock%} {%
+block content%}{% with messages = get_flashed_messages(category_filter=["success"])%} {% if messages%}
+{%for message in messages%}
+<div class="alert" style="background-color: #d1e7dd">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';"
+    >&times;</span
+  >
+  <strong style="color: #256245">{{message}}</strong>
+</div>
+{%endfor%} {%endif %} {%endwith%} {% with errors =
+get_flashed_messages(category_filter=["error"]) %} {% if errors %} {%for msg in
+errors %}
+<div class="alert" style="background-color: #f8d7da">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';"
+    >&times;</span
+  >
+  <p style="color: #a12029">Error: <strong>{{msg}}</strong></p>
+</div>
+{% endfor %} {% endif %} {% endwith %}
 <div class="account-page">
   <div class="container">
     <div class="row">
@@ -9,7 +27,7 @@
         />
       </div>
       <div class="col-2">
-        <div class="form-container" style="height: 400px;">
+        <div class="form-container" style="height: 400px">
           <div class="form-btn">
             <a
               href="/login"
@@ -23,21 +41,25 @@
             <div class="form-group">
               <label for="email">Email Address</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="txt_username"
                 placeholder="Enter Email"
-              required/>
+                required
+              />
               <label for="password">Password</label>
               <input
                 type="password"
                 id="password"
                 name="txt_password"
                 placeholder="Enter Password"
-              required/>
+                required
+              />
               <br />
               <div>
-                <button class="btn" type="submit" value="txt_username">Login</button>
+                <button class="btn" type="submit" value="txt_username">
+                  Login
+                </button>
               </div>
             </div>
           </form>

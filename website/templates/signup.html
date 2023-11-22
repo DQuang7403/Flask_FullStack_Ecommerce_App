@@ -14,7 +14,7 @@
             <a href="/login" >Login</a>
             <a href="/signup" style="border-bottom: 3px solid #00aedf; padding-bottom: 3px;">Register</a>
           </div>
-          <form method="POST" action="{{ url_for('views.register') }}">
+          <form method="POST" action="{{ url_for('auth.sign_up') }}">
             <h2 style="margin-bottom: 2rem;">Sign Up</h2>
             <div class="form-group">
               <label for="username">Username</label>
@@ -29,7 +29,7 @@
               <span class="validation">{{ username_error }}</span>
               <label for="email">Email Address</label>
               <input
-                type="text"
+                type="email"
                 id="email"
                 name="email"
                 class="form-control"
